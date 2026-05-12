@@ -1,4 +1,4 @@
-FROM php:8.3-apache
+FROM php:8.5-apache
 
 # packages
 RUN sed -i 's|main|main non-free|' /etc/apt/sources.list.d/debian.sources && apt-get update && apt-get install -y \
@@ -38,4 +38,4 @@ USER www-data
 COPY --chown=www-data . .
 RUN composer install
 
-CMD ["./serve.sh"]
+CMD ["apache2-foreground"]
