@@ -19,9 +19,6 @@ services:
     container_name: gwmariadb_mariadb
     restart: always
     environment:
-      MYSQL_DATABASE: gwmariadb
-      MYSQL_USER: gwmariadb
-      MYSQL_PASSWORD: gwmariadb
       MYSQL_ROOT_PASSWORD: gwmariadb
     networks:
       - gwmariadb-network
