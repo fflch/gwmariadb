@@ -52,4 +52,18 @@ class Database {
 
         return json_encode($stmt->fetchAll(\PDO::FETCH_COLUMN));
     }
+
+    public static function database_existe(string $nome): bool
+    {
+        $lista = json_decode(self::listar_databases(), true);
+        return in_array($nome, $lista ?? []);
+    }
+    
+    public static function usuario_existe(string $nome): bool
+    {
+        $lista = json_decode(self::listar_usuarios(), true);
+        return in_array($nome, $lista ?? []);
+    }
+
+
 }

@@ -19,3 +19,13 @@ Requisições existentes:
     curl -X POST http://localhost:8080/ -H "X-Token: 123" \
         -H "Content-Type: application/json" \
         -d '{"action":"listar_usuarios"}'
+
+Novas requisições:
+
+    curl -X POST http://localhost:8080/ -H "X-Token: 123" \
+        -H "Content-Type: application/json" \
+        -d '{"action":"database_existe", "nome":"nome_database"}'
+
+    curl -X POST http://localhost:8080/ -H "X-Token: 123" \
+        -H "Content-Type: application/json" \
+        -d '{"action":"usuario_existe", "nome":"nome_usuario"}'
