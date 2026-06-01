@@ -12,6 +12,12 @@ services:
       - ./:/var/www/html
     environment:
       HOME: /tmp
+      TOKEN: 123
+      DB_HOST: mariadb
+      DB_NAME: admin
+      DB_USER: admin
+      DB_PASS: admin
+      DB_PORT: 3306
     user: "${UID:-1000}:${GID:-1000}"
 
   mariadb:

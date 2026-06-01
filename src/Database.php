@@ -4,10 +4,10 @@ namespace App;
 
 class Database {
     private static function db() {
-        $DB_HOST = $_ENV['DB_HOST'] ?? '127.0.0.1';
-        $DB_USER = $_ENV['DB_USER'] ?? 'root';
-        $DB_PASS = $_ENV['DB_PASS'] ?? '';
-        $DB_PORT = $_ENV['DB_PORT'] ?? '8306';
+        $DB_HOST = $_ENV['DB_HOST'] ?? $_SERVER['DB_HOST'] ?? '127.0.0.1';
+        $DB_USER = $_ENV['DB_USER'] ?? $_SERVER['DB_USER'] ?? 'root';
+        $DB_PASS = $_ENV['DB_PASS'] ?? $_SERVER['DB_PASS'] ?? '';
+        $DB_PORT = $_ENV['DB_PORT'] ?? $_SERVER['DB_PORT'] ?? '8306';
 
         return new \PDO(
             "mysql:host=$DB_HOST;port=$DB_PORT",

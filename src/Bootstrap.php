@@ -6,7 +6,7 @@ use Dotenv\Dotenv;
 use flight\Engine;
 
 $dotenv = Dotenv::createUnsafeImmutable(__DIR__ . '/../');
-$dotenv->load();
+$dotenv->safeLoad();
 
 // carrega database
 require __DIR__ . '/Database.php';
