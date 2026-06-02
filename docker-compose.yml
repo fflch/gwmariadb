@@ -3,7 +3,7 @@ services:
     image: gwmariadb:latest
     container_name: gwmariadb
     ports:
-      - "8080:80"
+      - "8080:3142"
     depends_on:
       - mariadb
     networks:
